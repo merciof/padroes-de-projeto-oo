@@ -44,6 +44,22 @@ public class TesterObservador {
 		
 	}
 	
+	@Test
+	public void removerTresObservadores() {
+		Assunto assunto = new Assunto();
+		Observador observador_1 = new Binario();
+		Observador observador_2 = new Octal();
+		Observador observador_3 = new Hexa();
+		assunto.adicionarObservador(observador_1);
+		assunto.adicionarObservador(observador_2);
+		assunto.adicionarObservador(observador_3);
+		assunto.removerObservador(observador_1);
+		assunto.removerObservador(observador_2);
+		assunto.removerObservador(observador_3);
+		assertEquals(0, assunto.observadores.size());
+		
+	}
+	
 	
 	
 	
