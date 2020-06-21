@@ -31,5 +31,10 @@ public class Assunto {
 		observadores.add(observador);
 		
 	}
+
+	public void removerObservador(Observador observador) {
+		observadores.remove(observador);
+		
+	}
 }
 
