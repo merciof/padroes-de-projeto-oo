@@ -2,20 +2,27 @@ package composicao.observador;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TesterObservador {
 
+	Assunto assunto;
+	
+	@Before	
+	public void criarAssunto() {
+		assunto = new Assunto();
+	}
+	
 	@Test
 	public void alteracaoEstado() {
-		Assunto assunto = new Assunto();
+		
 		//assunto.setEstado(0);
 		assertEquals(0, assunto.getEstado());
 	}
 	
 	@Test
 	public void adicionarUmObservador() {
-		Assunto assunto = new Assunto();
 		Observador observador = new Binario();
 		assunto.adicionarObservador(observador);
 		assertEquals(1, assunto.observadores.size());
@@ -23,7 +30,6 @@ public class TesterObservador {
 	
 	@Test
 	public void adicionarTresObservadores() {
-		Assunto assunto = new Assunto();
 		Observador observador_1 = new Binario();
 		Observador observador_2 = new Octal();
 		Observador observador_3 = new Hexa();
@@ -35,7 +41,6 @@ public class TesterObservador {
 	
 	@Test
 	public void removerUmObservador() {
-		Assunto assunto = new Assunto();
 		Observador observador = new Binario();
 		assunto.adicionarObservador(observador);
 		assertEquals(1, assunto.observadores.size());
@@ -46,7 +51,6 @@ public class TesterObservador {
 	
 	@Test
 	public void removerTresObservadores() {
-		Assunto assunto = new Assunto();
 		Observador observador_1 = new Binario();
 		Observador observador_2 = new Octal();
 		Observador observador_3 = new Hexa();
@@ -59,6 +63,8 @@ public class TesterObservador {
 		assertEquals(0, assunto.observadores.size());
 		
 	}
+	
+	
 	
 	
 	
