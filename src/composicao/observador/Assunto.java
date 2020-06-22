@@ -25,6 +25,7 @@ public class Assunto {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
+		notificarObservadores();
 	}
 
 	public void adicionarObservador(Observador observador) {
@@ -35,6 +36,12 @@ public class Assunto {
 	public void removerObservador(Observador observador) {
 		observadores.remove(observador);
 		
+	}
+	
+	public void notificarObservadores() {
+		for (Observador observador : observadores) {
+			observador.atualizar();
+		}
 	}
 }
 
