@@ -4,7 +4,7 @@ public abstract class Observador {
 	
 	protected Assunto assunto;
 	
-	public abstract String atualizar();
+	public abstract void atualizar();
 	
 	
 }
